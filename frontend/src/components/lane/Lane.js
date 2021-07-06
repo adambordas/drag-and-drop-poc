@@ -2,7 +2,7 @@ import './Lane.css';
 
 import Card from '../card/Card'
 
-function Lane() {
+function Lane({ title, cards }) {
   const allowDrop = e => {
     e.preventDefault();
   };
@@ -16,13 +16,11 @@ function Lane() {
   
   return (
     <div className="lane-container">
-      <h1>Todo</h1>
+      <h1>{title}</h1>
       <div className="lane" onDrop={receiveCardDrop} onDragOver={allowDrop}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {
+          cards.map(card => <Card key={card.id} id={card.id} description={card.description} />)
+        }
       </div>
     </div>
   );
