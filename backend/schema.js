@@ -4,6 +4,7 @@ const typeDefs = gql`
   type Card {
     id: ID!,
     description: String!
+    lane: String!
   }
 
   type Query {
@@ -11,7 +12,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    updateCard(id: ID!): Card
+    updateCard(id: ID!, lane: String!): Card
   }
 `;
 

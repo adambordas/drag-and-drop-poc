@@ -7,8 +7,8 @@ const resolvers = {
     },
   },
   Mutation: {
-    updateCard: (_, { id }) => {
-      return cardService.updateCard(id);
+    updateCard: (_, { id, lane }) => {
+      return cardService.updateCard(id, lane);
     }
   }
 };
