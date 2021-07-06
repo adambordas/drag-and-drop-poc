@@ -1,8 +1,11 @@
 import './Lane.css';
 import Card from '../card/Card'
-import { moveCard } from '../../lib/cardService';
+import { useMutation } from '@apollo/client';
+import { MOVE_CARD } from '../../lib/queries';
 
-function Lane({ name, cards, refreshCallback }) {
+function Lane({ name, cards }) {
+  const [moveCard] = useMutation(MOVE_CARD);
+
   const allowDrop = e => {
     e.preventDefault();
   };
@@ -12,9 +15,12 @@ function Lane({ name, cards, refreshCallback }) {
 
     const cardId = e.dataTransfer.getData('cardId');
 
-    moveCard(cardId, name);
-
-    refreshCallback();
+    moveCard({
+      variables: {
+        id: cardId,
+        lane: name
+      }
+    });
   };
   
   return (
