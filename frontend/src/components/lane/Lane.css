@@ -1,0 +1,17 @@
+.lane-container {
+  flex: 1 1;
+  padding: 10px;
+}
+
+.lane-container h1 {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+}
+
+.lane {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border: 2px solid #AAA;
+}
