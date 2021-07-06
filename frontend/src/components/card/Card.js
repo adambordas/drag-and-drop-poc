@@ -2,7 +2,7 @@ import './Card.css';
 
 function Card({ id, description }) {
   const applyDragData = e => {
-    e.dataTransfer.setData('card', e.target);
+    e.dataTransfer.setData('cardId', id);
   };
 
   return (
