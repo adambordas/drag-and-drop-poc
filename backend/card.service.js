@@ -9,15 +9,10 @@ const mockCards = [
   },
 ];
 
-const getCards = () => {
+export const getCards = () => {
   return mockCards;
 };
 
-const updateCard = id => {
+export const updateCard = id => {
   return mockCards.find(card => card.id === id);
-};
-
-module.exports = {
-  getCards,
-  updateCard
 };

@@ -1,4 +1,4 @@
-const cardService = require('./card.service.js');
+import * as cardService from './card.service.js';
 
 const resolvers = {
   Query: {
@@ -13,4 +13,4 @@ const resolvers = {
   }
 };
 
-module.exports = resolvers;
+export default resolvers;

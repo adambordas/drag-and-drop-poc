@@ -1,6 +1,6 @@
-const { gql } = require('apollo-server');
+import { gql } from 'apollo-server';
 
-const schema = gql`
+const typeDefs = gql`
   type Card {
     id: ID!,
     description: String!
@@ -15,4 +15,4 @@ const schema = gql`
   }
 `;
 
-module.exports = schema;
+export default typeDefs;
