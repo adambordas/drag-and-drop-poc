@@ -12,6 +12,8 @@
 .lane {
   display: flex;
   flex-direction: column;
-  padding: 5px;
-  border: 2px solid #AAA;
+  gap: 5px;
+  padding: 10px;
+  border: 1px solid #DDD;
+  min-height: 40px;
 }
