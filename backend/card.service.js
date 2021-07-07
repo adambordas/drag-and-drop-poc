@@ -1,44 +1,15 @@
-const mockCards = [
-  {
-    id: '1',
-    description: 'Todo item 1',
-    lane: 'todo',
-  },
-  {
-    id: '2',
-    description: 'Todo item 2',
-    lane: 'todo',
-  },
-  {
-    id: '3',
-    description: 'Todo item 3',
-    lane: 'in-progress',
-  },
-  {
-    id: '4',
-    description: 'Todo item 4',
-    lane: 'done',
-  },
-  {
-    id: '5',
-    description: 'Todo item 5',
-    lane: 'done',
-  },
-  {
-    id: '6',
-    description: 'Todo item 6',
-    lane: 'done',
-  },
-];
+import createDatabase from './database.js';
 
-export const getCards = () => {
-  return mockCards;
+const db = createDatabase();
+
+export const getCards = async () => {
+  const result = await db.query('SELECT * FROM cards');
+
+  return result?.rows || [];
 };
 
-export const updateCard = (id, lane) => {
-  const cardIndex = mockCards.findIndex(card => card.id === id);
-  
-  mockCards[cardIndex].lane = lane;
+export const updateCard = async (id, lane) => {
+  const result = await db.query('UPDATE cards SET lane=$2 WHERE id=$1 RETURNING *', [id, lane]);
 
-  return mockCards[cardIndex];
+  return result?.rows?.[0] || [];
 };

@@ -2,13 +2,13 @@ import * as cardService from './card.service.js';
 
 const resolvers = {
   Query: {
-    cards: () => {
-      return cardService.getCards();
+    cards: async () => {
+      return await cardService.getCards();
     },
   },
   Mutation: {
-    updateCard: (_, { id, lane }) => {
-      return cardService.updateCard(id, lane);
+    updateCard: async (_, { id, lane }) => {
+      return await cardService.updateCard(id, lane);
     }
   }
 };
