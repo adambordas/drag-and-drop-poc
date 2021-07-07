@@ -7,7 +7,7 @@ import { GET_CARDS } from './lib/queries';
 function Main() {
   const [cards, setCards] = useState([]);
 
-  const { data } = useQuery(GET_CARDS);
+  const { data } = useQuery(GET_CARDS, { fetchPolicy: 'network-only' });
 
   useEffect(() => {
     if (data) {
