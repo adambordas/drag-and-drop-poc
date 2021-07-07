@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main component renders properly 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="lane-container"
+    >
+      <h1>
+        todo
+      </h1>
+      <div
+        class="lane"
+      >
+        <div
+          class="card"
+          draggable="true"
+        >
+          test description 1
+        </div>
+      </div>
+    </div>
+    <div
+      class="lane-container"
+    >
+      <h1>
+        in-progress
+      </h1>
+      <div
+        class="lane"
+      >
+        <div
+          class="card"
+          draggable="true"
+        >
+          test description 2
+        </div>
+      </div>
+    </div>
+    <div
+      class="lane-container"
+    >
+      <h1>
+        done
+      </h1>
+      <div
+        class="lane"
+      >
+        <div
+          class="card"
+          draggable="true"
+        >
+          test description 3
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

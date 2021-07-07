@@ -10,12 +10,12 @@ function Lane({ name, cards }) {
     e.preventDefault();
   };
 
-  const receiveCardDrop = e => {
+  const receiveCardDrop = async e => {
     e.preventDefault();
 
     const cardId = e.dataTransfer.getData('cardId');
 
-    moveCard({
+    await moveCard({
       variables: {
         id: cardId,
         lane: name

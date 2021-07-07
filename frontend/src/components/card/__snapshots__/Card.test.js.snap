@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component renders properly 1`] = `
+<div>
+  <div
+    class="card"
+    draggable="true"
+  >
+    test description
+  </div>
+</div>
+`;
